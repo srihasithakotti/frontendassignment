@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow with Scroll</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: auto; /* Adds both vertical and horizontal scrollbars if necessary */
+        }
+        .content {
+            height: 500px; /* Content is larger than container to trigger overflow */
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            This is some content that is too large to fit inside the container.
+            Scrollbars will appear to handle the overflow.
+        </div>
+    </div>
+
+</body>
+</html>

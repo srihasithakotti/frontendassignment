@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layouts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 20px;
+        }
+        
+        .grid-item {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            border: 2px solid black;
+        }
+        /* ✅ 1. Simple Grid (2x2) */
+        
+        .simple-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        /* ✅ 2. Asymmetrical Grid */
+        
+        .asymmetrical-grid {
+            grid-template-columns: 2fr 1fr;
+        }
+        /* ✅ 3. Auto-fit Responsive Grid */
+        
+        .responsive-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        /* ✅ 4. Grid with Header, Sidebar & Content */
+        
+        .layout-grid {
+            grid-template-areas: "header header" "sidebar content";
+            grid-template-columns: 200px 1fr;
+        }
+        
+        .header {
+            grid-area: header;
+            background-color: lightcoral;
+        }
+        
+        .sidebar {
+            grid-area: sidebar;
+            background-color: lightgreen;
+        }
+        
+        .content {
+            grid-area: content;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>1️⃣ Simple Grid (2x2)</h2>
+    <div class="grid-container simple-grid">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+    </div>
+
+    <h2>2️⃣ Asymmetrical Grid</h2>
+    <div class="grid-container asymmetrical-grid">
+        <div class="grid-item">Wide</div>
+        <div class="grid-item">Narrow</div>
+    </div>
+
+    <h2>3️⃣ Responsive Auto-fit Grid</h2>
+    <div class="grid-container responsive-grid">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+    </div>
+
+    <h2>4️⃣ Layout Grid (Header, Sidebar & Content)</h2>
+    <div class="grid-container layout-grid">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item sidebar">Sidebar</div>
+        <div class="grid-item content">Content</div>
+    </div>
+
+</body>
+
+</html>
